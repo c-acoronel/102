@@ -1,0 +1,4 @@
+<dataset>
+    <complaint id="1" description="desc1" denunciante_id="1" involucrado="2" />
+    <complaint id="2" description="desc2" denunciante_id="1" involucrado="2"/>
+</dataset>

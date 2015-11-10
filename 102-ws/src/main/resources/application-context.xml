@@ -1,0 +1,39 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+    http://www.springframework.org/schema/util 
+    http://www.springframework.org/schema/util/spring-util-3.1.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- Configuration -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreResourceNotFound" value="true" />
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+		<property name="properties" ref="appConfig" />
+	</bean>
+
+
+	<bean id="appConfig"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="ignoreResourceNotFound" value="true" />
+		<property name="properties">
+			<!-- Default location of properties file if not found in locations above -->
+			<util:properties location="classpath:linea102.properties">
+			</util:properties>
+		</property>
+	</bean>
+	
+
+	<context:component-scan base-package="com.copnaf.linea102" />
+
+	<!--DB CONNECTION -->
+	<import resource="classpath*:db.config.xml" />
+
+	<!-- SECURITY CONFIG -->
+	<!--<import resource="classpath*:**/${security.provider.prefix}-provider-context.xml" />-->
+
+</beans>

@@ -1,0 +1,32 @@
+# Eclipse
+.classpath
+.project
+.settings/
+
+# TestNG plugin for Eclipse
+test-output/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Maven
+log/
+target/
+/*.iml
+/.idea
+
+bin/
+
+# Webapp
+*.exe
+mongoose.conf
+*.sw*
+*~
+/build/
+/bin/
+/node/
+/node_modules/
+.bin

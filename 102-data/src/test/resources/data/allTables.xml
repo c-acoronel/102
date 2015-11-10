@@ -1,0 +1,53 @@
+<dataset>
+<dataset>
+    <sl_artifact_type id="1" artifact_type_code="code1"
+        artifact_type_desc="desc1" />
+    <sl_artifact_type id="2" artifact_type_code="code2"
+        artifact_type_desc="desc2" />
+
+    <sl_contact_type id="1" contact_type_code="code1"
+        contact_type_desc="desc1" />
+    <sl_contact_type id="2" contact_type_code="code2"
+        contact_type_desc="desc2" />
+
+    <sl_store_type id="1" store_type_code="code1" store_type_desc="desc1" />
+    <sl_store_type id="2" store_type_code="code2" store_type_desc="desc2" />
+    
+    <sl_store id="1" locality="Seattle"
+        hour_close_24h="08:00" store_desc="COol Store 1" address1="add1"
+        coordinate_latitude="30.268925" coordinate_longitude="-97.747908"
+        moteaf_company_code="code 1" moteaf_tenant_name="tenant1" store_name="Store Name 1"
+        hour_open_24h="23:00" address2="add2" region="Washington"
+        address3="add3" address4="add4" website="web1" postal_code="1564" store_type_id="1" />
+
+    <sl_store id="2" locality="Seattle"
+        hour_close_24h="08:58" store_desc="COol Store 2" address1="add2"
+        coordinate_latitude="30.268925" coordinate_longitude="-97.747908"
+        moteaf_company_code="code 2" moteaf_tenant_name="tenant2" store_name="Store Name 2"
+        hour_open_24h="23:05" address2="add2" region="Washington"
+        address3="add3" address4="add4" website="web2" postal_code="1564" store_type_id="2" />
+
+    <sl_store_artifacts id="1" artifact_document_id="1"
+        artifact_file_name="File Name1" artifact_location_url="aUrl"
+        artifact_type_id="1" store_id="1" />
+    <sl_store_artifacts id="2" artifact_document_id="2"
+        artifact_file_name="File Name2" artifact_location_url="aUrl"
+        artifact_type_id="2" store_id="2" />
+
+    <sl_store_contact id="1" contact_email="amail1@someMail.com"
+        contact_name="Contact 1" contact_phone="00115588" contact_type_id="1"
+        store_id="1" />
+    <sl_store_contact id="2" contact_email="amail2@someMail.com"
+        contact_name="Contact 2" contact_phone="00115599" contact_type_id="2"
+        store_id="2" />
+
+	<sl_store_attributes id="1" attribute_key="key1"
+		attribute_value="value1" store_id="1" />
+	<sl_store_attributes id="2" attribute_key="key2"
+		attribute_value="value2" store_id="1" />
+	<sl_store_attributes id="3" attribute_key="key3"
+		attribute_value="value3" store_id="1" />
+
+    
+
+</dataset>

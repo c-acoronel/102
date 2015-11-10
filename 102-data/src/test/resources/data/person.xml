@@ -1,0 +1,4 @@
+<dataset>
+    <person id="1" name="person1" last_name="test last name" dni="32516165" address="test address" phone_number="+54 343 4258748" person_type="FAMILIAR"/>
+    <person id="2" name="person2" last_name="test last name 2" dni="30665878" address="test address 2" phone_number="+1 343 4258748" person_type="CONSULTANTE"/>
+</dataset>

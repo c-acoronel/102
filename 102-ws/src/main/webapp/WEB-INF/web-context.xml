@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+       xsi:schemaLocation=" http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd"
+       default-autowire="byName">
+
+    <import resource="classpath*:/application-context.xml" />
+
+    <jaxrs:server address="/">
+        <jaxrs:inInterceptors>
+            <ref bean="validationInInterceptor" />
+        </jaxrs:inInterceptors>
+
+        <jaxrs:outInterceptors>
+            <ref bean="validationOutInterceptor" />
+        </jaxrs:outInterceptors>
+
+        <jaxrs:serviceBeans>
+            <ref bean="person"/>
+        </jaxrs:serviceBeans>
+
+        <jaxrs:providers>
+            <ref bean="jacksonProvider" />
+            <!--<ref bean="exceptionMapper" />-->
+            <bean class="com.copnaf.linea102.exception.mapper.ValidationExceptionMapper" />
+        </jaxrs:providers>
+
+    </jaxrs:server>
+
+    <!--<bean id="exceptionMapper"-->
+          <!--class="org.apache.cxf.jaxrs.validation.ValidationExceptionMapper" />-->
+
+    <bean id="validationProvider" class="org.apache.cxf.validation.BeanValidationProvider" />
+
+    <bean id="validationInInterceptor"
+          class="org.apache.cxf.jaxrs.validation.JAXRSBeanValidationInInterceptor">
+        <property name="provider" ref="validationProvider" />
+    </bean>
+
+    <bean id="validationOutInterceptor"
+          class="org.apache.cxf.jaxrs.validation.JAXRSBeanValidationOutInterceptor">
+        <property name="provider" ref="validationProvider" />
+    </bean>
+
+    <bean id="jacksonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
+
+    <!-- RESOURCES -->
+    <bean id="person" class="com.copnaf.linea102.resource.PersonResource" />
+
+</beans>
+
+
